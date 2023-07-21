@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Data Types</title>
+        </head>
+        <body>
+            <!-- Assigning the value "Volvo" to the  id "demo" -->
+            <p id="demo"></p>
+
+            <!-- Adding numbers & a string: number will be treated as a string -->
+            <p id="adding"></p>
+            <script>
+                let carName = "Volvo";
+                document.getElementById("demo").innerHTML = carName; 
+
+                let added = 16 + "Volvo";
+                document.getElementById("adding").innerHTML = added;
+            </script>
+        </body>
+    </html>
