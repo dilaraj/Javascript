@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Counter</title>
+    </head>
+    <body>
+        <div>Add or minus from the counter using the two buttons below</div>
+        
+        <button type="button" id="add" onclick="addFunction()">Add 1</button>
+        <button type="button" id="sub" onclick="subFunction()">Minus 1</button>
+
+        <div id="counter">0</div>
+
+        <script>
+            let counter = 0;
+
+            const add = (function () {
+                return function () {counter += 1; return counter;}
+            }) ();
+
+            const sub = (function () {
+                return function () {counter -= 1; return counter;}
+            }) ();
+
+            function addFunction() {
+                document.getElementById("counter").innerHTML = add();
+            }
+
+            function subFunction() {
+                document.getElementById("counter").innerHTML = sub();
+            }
+        </script>
+    </body>
+</html>
