@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Functions</title>
+    </head>
+    <body>
+        <p>Perform a calculation using a function</p>
+        <p id="demo"></p>
+        <p id="demo1"></p>
+        <p id="demo2"></p>
+        <p id="demo3"></p>
+        <p id="demo4"></p>
+        <script>
+            function func(num1, num2) {
+                return num1 * num2;
+            }
+            
+            // A function can be called and stored in a variable for later use
+            let result = func(4, 7);
+            document.getElementById("demo").innerHTML = result;
+            // Or it can be used write away without storing it in a variable
+            document.getElementById("demo1").innerHTML = func(4, 10);
+
+            // Calling the function without () or its parameters results in displaying the function itself
+            document.getElementById("demo2").innerHTML = func;
+
+            // Functions can be using in calculations stored in variables or as is
+            let x = func(8, 3);
+            let cal = "The total is " + x + " numbers";
+            document.getElementById("demo3").innerHTML = cal;
+
+            let cal1 = "The other total is " + func(2, 4) + " numbers";
+            document.getElementById("demo4").innerHTML = cal1;
+
+            // PASSING FUNCTIONS AS ARGUMENTS
+            // Example 1
+            function sayHello() {
+                console.log("Hello!")
+            }
+            setTimeout(sayHello, 3000)  // Here the sayHello function is called without "()" and not invoked (with ())
+            
+            // Example 2
+            function sayHello(param) {
+                console.log("Hello", param);
+                param();
+                return "Hiii"
+            }
+            function smaller() {
+                console.log("Everything works!")
+            }
+
+            const returnHello = sayHello(smaller)
+            console.log(returnHello)
+
+            // ARROW FUNCTIONS
+            hello = () => "Hello World!";
+            document.write(hello());
+
+            // Example: Passing values using parentheses
+            hello = param => " Hello " + param;
+            document.write(hello("Dilara"));
+        </script>
+    </body>
+</html>
