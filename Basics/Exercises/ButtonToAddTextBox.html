@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Add a Text Box Using Button</title>
+    </head>
+    <body>
+        <h1>Add a New Text Box Using the Button Below:</h1>
+
+        <button onclick="addBox()" value="add text box">Add Box!</button>
+        <div id="box"></div>
+
+        <h1>Add a New Button Using the Button Below:</h1>
+        <button onclick="addBtn()" value="add button">Add Button!</button>
+        <div id="btn"></div>
+
+        <script>
+            function addBox() {
+                let x = 1;
+                let box = document.getElementById("box");
+                box.innerHTML += "<input type='text' id='text" + x++ + "'><br><br>";
+            }
+
+            function addBtn() {
+                let x = 1;
+                let btn = document.getElementById("btn");
+                btn.innerHTML += "<button id='btn" + x++ + "'>This is button</button><br><br>";
+            }
+        </script>
+    </body>
+</html>
