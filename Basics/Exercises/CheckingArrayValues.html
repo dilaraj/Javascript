@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Check the value in the array </title>
+    </head>
+    <body>
+        <h1>Check to see if your value is found in an array</h1>
+        
+        <label for="num">Enter value:</label>
+        <input type="text" id="num" name="num">
+        <br><br>
+
+        <button id="sub" onclick="printValue()">Check</button>
+        <br><br>
+        <div id="display"></div>
+
+        <script>
+            const numbers = [58, 4, 17, 32, 24, 53, 44, 99, 70, 56, 72, 
+                            43, 36, 51, 37, 46, 35, 25, 29, 64, 76, 21, 
+                            82, 94, 47, 12, 19, 31, 69, 81, 20, 91, 50, 
+                            3, 34, 79, 2, 27, 68, 52, 23, 22, 84, 18, 16, 
+                            33, 13, 39, 77, 8];
+            
+            let value = document.getElementById("num");
+            let output = document.getElementById("display");
+
+            function printValue() {
+                let inputElVal = Number(value.value);
+                if(numbers.includes(inputElVal)) {
+                    output.innerHTML = "Value " + inputElVal + " found in the array!"
+                } 
+                else {
+                    output.innerHTML = "Value " + inputElVal + " is not found in array, please try again";
+                }
+               /* for (let i = 0; i < numbers.length; i++) {
+                    if (inputElVal ===  numbers[i]) {
+                        output.innerHTML = inputElVal;
+                        output.innerHTML = "Value " + inputElVal + " found in the array!"
+                        return;
+                    }
+                }
+                output.innerHTML = "Value " + inputElVal + " is not found in array, please try again";*/
+            
+            }
+
+            value.addEventListener("keyup", function(event){
+                if (event.keyCode === 13) {
+                    event.preventDefault();
+                    document.getElementById("sub").click();
+                }
+            })
+            
+        </script>
+    </body>
+</html>
