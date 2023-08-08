@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Template Literals</title>
+    </head>
+    <body>
+        <div id="tl1"></div>
+        <div id="tl2"></div>
+        <div id="tl3"></div>
+        <div id="tl4"></div>
+
+        <script>
+            // Multiline Strings
+            let text = 
+            `The quick
+            brown fox 
+            jumps over
+            the lazy dog`;
+            document.getElementById("tl1").innerHTML = text;
+
+            // Variable Substitutions
+            let fName = "John";
+            let lName = "Doe";
+
+            let text1 = `Welcome ${fName}, ${lName}!`;
+            document.getElementById("tl2").innerHTML = text1;
+
+            // Expression Substitutions
+            let price = 10;
+            let VAT = 0.25
+
+            let total = `Total: ${(price * (1 + VAT)).toFixed(2)}`;
+            document.getElementById("tl3").innerHTML = total;
+
+            // HTML Templates
+            let header = "Templates Literals";
+            let tags = ["template literals", "javascript", "es6"];
+
+            let html = `<h2>${header}</h2><ul>`;
+            for (const x of tags) {
+                html += `<li>${x}</li>`;
+            }
+
+            html += '</ul>';
+
+            document.getElementById("tl4").innerHTML = html;
+
+        </script>
+    </body>
+</html>
