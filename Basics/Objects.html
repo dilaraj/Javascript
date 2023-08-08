@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Objects</title>
+    </head>
+    <body>
+        <div id="ob1"></div>
+        <div id="ob2"></div>
+        <div id="ob3"></div>
+
+        <script>
+            const person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+
+            // Two methods of accessing object properties
+            document.getElementById("ob1").innerHTML = person.firstName;
+            document.getElementById("ob2").innerHTML = person["lastName"];
+
+            // Methods as values in objects
+            const person1 = {
+                firstName: "John",
+                lastName: "Doe",
+                fullName: function() {
+                    return this.firstName + " " + this.lastName;
+                }
+            };
+
+            let name = person1.fullName()
+
+            document.getElementById("ob3").innerHTML = name;
+        </script>
+    </body>
+</html>
