@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Arrays</title>
+    </head>
+    <body>
+        <div id="arr1"></div>
+        <div id="arr2"></div>
+        <div id="arr3"></div>
+        <div id="arr4"></div>
+        <div id="arr5"></div>
+        <div id="arr6"></div>
+        <div id="arr7"></div>
+        <div id="arr8"></div>
+        <div id="arr9"></div>
+        <div id="arr10"></div>
+        <div id="arr11"></div>
+        <br><br>
+        <button onclick="random()">Random Sort</button>
+        <div id="ran"></div>
+
+        <div id="max"></div>
+        <div id="min"></div>
+
+        <script>
+            const array = ["Saab", "Volvo", "BMW"];
+            document.getElementById("arr1").innerHTML = array;
+
+            // Accessing members using names
+            const person = {firstName:"John", lastName:"Doe", age:46};
+            document.getElementById("arr2").innerHTML = person.firstName;
+
+            // Using the length property
+            document.getElementById("arr3").innerHTML = array.length;
+
+            // Using the sort() property
+            document.getElementById("arr4").innerHTML = array.sort();
+
+            // Accessing the last element
+            document.getElementById("arr5").innerHTML = array[array.length - 1];
+
+            // Looping through an array using a for loop
+            let text = "<ul>";
+            for (let i = 0; i < array.length; i++) {
+                text += "<li>" + array[i] + "</li>";
+            }
+            text += "</ul>";
+
+            document.getElementById("arr6").innerHTML = text;
+
+            // Looping through an array using the Array.forEach() function
+            let text1 = "<ul>";
+            array.forEach(myFunction);
+            text1 += "</ul>";
+
+            document.getElementById("arr7").innerHTML = text1;
+
+            function myFunction(value) {
+                text1 += "<li>" + value + "</li>";
+            }
+
+            // Getting the type of array using two solutions
+            let type = Array.isArray(array);
+            document.getElementById("arr8").innerHTML = type;
+
+            let type1 = array instanceof Array;
+            document.getElementById("arr9").innerHTML = type1;
+
+            // Sorting an array alphabetically 
+            sort = array.sort();
+            document.getElementById("arr10").innerHTML = sort;
+
+            reSort = array.reverse();
+            document.getElementById("arr11").innerHTML = reSort;
+
+            // Sort an array randomly
+            const points = [100, 5, 25, 40, 10, 1];
+            document.getElementById("ran").innerHTML = points;
+
+            function random() {
+                points.sort(function() {return 0.5 - Math.random()});
+                document.getElementById("ran").innerHTML = points;
+            }
+
+            // Finding the max and min number in an array
+            document.getElementById("max").innerHTML = myArrayMax(points);
+            function myArrayMax(arr) {
+                return Math.max.apply(null, arr);
+            }
+
+            document.getElementById("min").innerHTML = myArrayMin(points);
+            function myArrayMin(arr) {
+                return Math.min.apply(null, arr);
+            }
+
+        </script>
+    </body>
+</html>
