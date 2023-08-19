@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Collections</title>
+    </head>
+    <body>
+        <h2>JavaScript HTML DOM</h2>
+        <p>Hello World!</p>
+        <p>Hello Norway!</p>
+        <p id="demo"></p>
+
+        <script>
+            // Retrieve and store all <p> elements
+            let myCollection = document.getElementsByTagName("p");
+            document.getElementById("demo").innerHTML = 
+            "The innerHTML of the second paragraph is: " + myCollection[1].innerHTML;
+
+            // Display the length of myCollection; i.e how many <p> elements are there
+            document.getElementById("demo").innerHTML += 
+            "<br><br> There are: " + myCollection.length + " p elements"    
+        </script>
+    </body>
+</html>
