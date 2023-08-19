@@ -1,0 +1,25 @@
+<!-- Write a JavaScript program that adds a keydown event listener to a text input to detect when the "Enter key" is pressed. -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Keydown Event Listener</title>
+    </head>
+    <body>
+        <input type="text" name="Enter" id="textbox" placeholder="Press Enter...">
+        <div id="event"></div>
+
+        <script>
+            let text = document.getElementById("textbox");
+            let dis = document.getElementById("event");
+
+            text.addEventListener("keydown", (event) => {
+                if (event.keyCode === 13) {
+                    dis.innerHTML = "The enter key  was pressed";
+                }
+            });
+        </script>
+    </body>
+</html>

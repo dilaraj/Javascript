@@ -1,0 +1,87 @@
+<!--Write a JavaScript program to create a slideshow that changes the displayed image when a next or previous button is clicked.-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Slideshow</title>
+        <style>
+            #img-container {
+                height: 50vh;
+                width: 50vw;
+                border: 3px solid #000000;
+
+                position: absolute;
+                margin: auto;
+                right: 0;
+                left: 0;
+            }
+
+            #next, #prev {
+                margin-top: 35rem;
+            }
+
+            #prev {
+                margin-left: 20vw;
+            }
+
+            #next {
+                margin-left: 50vw;
+            }
+
+            img {
+                height: 45vh;
+                width: 45vw;
+
+                position: absolute;
+                margin: auto;
+                right: 0;
+                left: 0;
+                top: 0;
+                bottom: 0;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <h1>Slideshow</h1>
+            <div id="img-container">
+                <img id="image" src="Images/image1.jpg">
+            </div>
+            <button type="button" id="prev">Previous</button>
+            <button type="button" id="next">Next</button>
+        </div>
+
+        <script>
+            let img = document.getElementById("image");
+            let next = document.getElementById("next");
+            let prev = document.getElementById("prev");
+            let images = ['Images/image1.jpg', 'Images/image2.jpg', 'Images/image3.jpg', 'Images/image4.jpg', 'Images/image5.jpg'];
+            let currentImg = 0;
+            let imageLength = images.length;
+            
+            next.addEventListener("click", nextImg);
+            prev.addEventListener("click", prevImg);
+
+            function nextImg() {
+                currentImg++;
+                if (currentImg == imageLength)
+                    currentImg = 0;
+                img.src = images[currentImg];
+
+                
+            }
+
+            function prevImg() {
+                currentImg--;
+                if (currentImg < 0) {
+                    currentImg = 0;
+                }
+                img.src = images[currentImg];
+            }
+
+        </script>
+    </body>
+</html>

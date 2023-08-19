@@ -1,0 +1,35 @@
+<!-- Write a JavaScript function that listens for a double click on an element and performs a specific action. -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Double Click</title>
+        <style>
+            h2 {
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <h2 id="click">Click Me!!</h2>
+        <div>
+            <img src="" alt="" id="img"/>
+        </div>
+
+        <script>
+            let click = document.getElementById("click");
+            let img = document.getElementById("img");
+
+            click.addEventListener("dblclick", (event) => {
+                img.src = "Images/finished.jpg";
+
+            });
+
+            click.addEventListener("click", (event) => {
+                img.src = "";
+            });
+        </script>
+    </body>
+</html>

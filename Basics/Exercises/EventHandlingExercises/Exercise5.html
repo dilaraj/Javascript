@@ -1,0 +1,71 @@
+<!--Write a JavaScript program to create a progress bar that updates its width based on task completion.-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Progress Bar</title>
+        <style>
+            h1 {
+                color: red;
+            }
+            #progressBar {
+                width: 30rem;
+                height: 3rem;
+                border: 3px solid red;
+            }
+            #progress {
+                height: 100%;
+                background-color: red;
+                width: 0;
+            }
+            #img {
+                height: 40rem;
+                margin-left: 10rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Click on the button to increase progress</h1>
+        <div id="progressBar">
+            <div class="progress-fill" id="progress"></div>
+        </div>
+        <br><br>
+        <button type="button" id="btn">Add Progress</button>
+        <button type="reset" id="reset">Reset</button>
+        <br><br>
+        <div>
+            <img id="img" src="" alt="">
+        </div>
+
+        <script>
+            let btn = document.getElementById("btn");
+            let res = document.getElementById("reset");
+            let bar = document.getElementById("progress");
+            let img = document.getElementById("img");
+            let src = "Images/finished.jpg";
+            let width = 10;
+
+            btn.addEventListener("click", addProgress);
+            res.addEventListener("click", reset);
+
+            function addProgress() {
+                bar.style.width = `${width}%`;
+                width += 10;
+
+                if (width == 110) {
+                    width = 100;
+                    img.src = src;
+                }
+            }
+
+            function reset() {
+                img.src = "";
+                width = 0;
+                bar.style.width = `${width}%`;
+            }
+            
+        </script>
+    </body>
+</html>

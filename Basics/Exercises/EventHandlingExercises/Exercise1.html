@@ -1,0 +1,32 @@
+<!--Write a JavaScript program that creates a button and add a click event listener to log a message when it's clicked.-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Log Message</title>
+    </head>
+    <body>
+        <script>
+            const button = document.createElement('button');
+            button.setAttribute("id", "btnId");
+            button.innerHTML = "Log Message";
+            document.body.appendChild(button);
+
+            let btnEvent = document.getElementById("btnId");
+            btnEvent.addEventListener("click", logMessage);
+
+            let x = 0;
+
+            function logMessage() {
+                /*let text = "Message Logged";
+                const newDiv = document.createElement('div');
+                newDiv.innerHTML = text;
+                document.body.appendChild(newDiv);*/
+                
+                alert("Message Logged " + x++);
+            }
+        </script>
+    </body>
+</html>
