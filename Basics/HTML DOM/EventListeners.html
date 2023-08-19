@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Event Listeners</title>
+    </head>
+    <body>
+        <div id="ex1">Click</div>
+
+        <button id="ex2">Display Date</button>
+        <div id="date"></div>
+
+        <div id="window"></div>
+
+        <button id="button">Calculate</button>
+        <div id="calc"></div>
+
+        <!-- Demonstrating event handlers -->
+        <div id="myDiv1">
+            <h2>Bubbling:</h2>
+            <p id="myP1">Click me!</p>
+        </div>
+
+        <div id="myDiv2">
+            <h2>Capturing:</h2>
+            <p id="myP2">Click me!</p>
+        </div>
+
+        <script>
+            // Simple event listener to alert "Hello World!"
+            document.getElementById("ex1").addEventListener("click", function(){alert("Hello World!");});
+            
+            // Display date on-click of button
+            let button = document.getElementById("ex2");
+            button.addEventListener("click", displayDate);
+
+            let getDate = document.getElementById("date");
+            function displayDate() {
+                let date = Date();
+                getDate.innerHTML = date;
+            } 
+
+            // Adding a event handler to display text upon window resize
+            window.addEventListener("resize", function() {
+                document.getElementById("window").innerHTML = "The window is resized!";
+            });
+
+            // Passing parameted in event handler to perform calculation
+            let num1 = 10;
+            let num2 = 7;
+            let btn = document.getElementById("button");
+            function calculate(a, b) {
+                let answer = document.getElementById("calc");
+                answer.innerHTML = a * b;
+            }
+
+            btn.addEventListener("click", calculate(num1, num2));
+
+            // Demonstrating event handlers
+            document.getElementById("myP1").addEventListener("click", function(){
+                                                                alert("You click the inner element!")
+                                                            }, false);
+            
+            document.getElementById("myDiv1").addEventListener("click", function() {
+                                                                alert("You clicked the outer element!");    
+                                                            }, false);
+
+            document.getElementById("myP2").addEventListener("click", function(){
+                                                                alert("You click the inner element!")
+                                                            }, true);
+            
+            document.getElementById("myDiv2").addEventListener("click", function() {
+                                                                alert("You clicked the outer element!");    
+                                                            }, true);
+        </script>
+    </body>
+</html>

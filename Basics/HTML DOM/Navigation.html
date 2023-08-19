@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Navigation</title>
+    </head>
+    <body>
+        <!-- 3 different ways of retrieving the text of an element and copying it into a second element -->
+        <h1 id="id01">My First Page</h1>
+        <p id="id02"></p>
+        <p id="id03"></p>
+        <p id="id04"></p>
+
+        <script>
+            // 3 different ways of retrieving the text of an element and copying it into a second element
+            // Method 1:
+            document.getElementById("id02").innerHTML = document.getElementById("id01").innerHTML;
+            
+            // Method 2:
+            document.getElementById("id03").innerHTML = document.getElementById("id01").firstChild.nodeValue;
+
+            // Method 3: 
+            document.getElementById("id04").innerHTML = document.getElementById("id01").childNodes[0].nodeValue;
+        </script>
+    </body>
+</html>

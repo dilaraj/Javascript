@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Forms</title>
+    </head>
+    <body>
+        <!-- Example1: Creating a form to validate an empty field -->
+        <h3>Creating a form to validate an empty field</h3>
+        <form name="form" onsubmit="return validate()" method="post">
+            Name: <input type="text" name="fname">
+            <input type="submit" value="Submit">
+        </form>
+
+        <!--Test1: Creating a form to validate number between 1 and 10 -->
+        <h3>Creating a form to validate number between 1 and 10</h3>
+        <form name="num" onsubmit="val()" method="post">
+            <input type="text" name="number" id="num">
+            <input type="submit" value="Submit">
+        </form>
+        <div id="text"></div>
+
+        <script>
+            // Example1 
+            function validate() {
+                let x = document.forms["form"]["fname"].value;
+                if (x == "") {
+                    alert("Name must be filled out");
+                    return false;
+                }
+            }
+
+            // Test1
+            function val() {
+                let x = document.forms["num"]["number"].value;
+                if (isNaN(x) || x > 10 || x < 1) {
+                    //alert("Not valid");
+                    document.getElementById("text").innerHTML = "<br> Not valid";
+                    return false;  // Prevents the form from being submitted with invalid entries
+                } else {
+                    document.getElementById("text").innerHTML = "<br> Input OK";
+                    return false;
+                }
+            }
+        </script>
+    </body>
+</html>
+
+
+<!-- 
+    Test Answers
+
+    Test1 Answers (better solution):
+    <p>Please input a number between 1 and 10:</p>
+
+    <input id="numb">
+
+    <button type="button" onclick="myFunction()">Submit</button>
+
+    <p id="demo"></p>
+
+    <script>
+    function myFunction() {
+    // Get the value of the input field with id="numb"
+    let x = document.getElementById("numb").value;
+    // If x is Not a Number or less than one or greater than 10
+    let text;
+    if (isNaN(x) || x < 1 || x > 10) {
+        text = "Input not valid";
+    } else {
+        text = "Input OK";
+    }
+    document.getElementById("demo").innerHTML = text;
+    }
+    </script>
+
+-->

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Changing HTML Content</title>
+    </head>
+    <body>
+        <img src="smiley.gif" alt="picture" id="myImg">
+        <div id="date"></div>
+
+        <script>
+            // Changing the value of the src attribute
+            //document.getElementById("myImg").src = "landscape.jpg"
+
+            // Create dynamic content : date
+            document.getElementById("date").innerHTML = "Date : " + Date();
+
+            // Document write to write directly to the HTML output stream
+            document.write(Date());
+        </script>
+    </body>
+</html>

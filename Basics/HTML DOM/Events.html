@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Events</title>
+    </head>
+    <body>
+        <h1 onclick="this.innerHTML = 'Ooops!'">Click on this text!</h1>
+        <div>Enter your name: <input type="text" id="name" onchange="upperCase()"></div>
+        <br><br>
+        <div onmouseover="mOver(this)" onmouseout="mOut(this)" style="background-color:#D94A38;width:120px;height:20px;padding:40px;">
+            Hover mouse over me
+        </div>
+        <br><br>
+        <div onmousedown="mDown(this)" onmouseup="mUp(this)" style="background-color:#D94A38;width:90px;height:20px;padding:40px;">
+            Click Me
+        </div>
+
+        <div id="test"></div>
+        
+        <script>
+            function upperCase() {
+                const x = document.getElementById("name");
+                x.value = x.value.toUpperCase();
+            }
+
+            function mOver(obj) {
+                obj.innerHTML = "Thank You";
+            }
+
+            function mOut(obj) {
+                obj.innerHTML = "Hover mouse over me";
+            }
+
+            function mDown(obj) {
+                obj.style.backgroudColor = "#1ec5e5";
+                obj.innerHTML = "Release Me"
+            }
+
+            function mUp(obj) {
+                obj.style.backgroudColor = "#D94A38";
+                obj.innerHTML = "Thank You";
+            }
+        </script>
+    </body>
+</html>
