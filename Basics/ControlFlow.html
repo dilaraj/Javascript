@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Control Flow</title>
+    </head>
+    <body>
+        <div id="if"></div>
+        <div id="ter"></div>
+        <div id="switch"></div>
+        <div id="for"></div>
+        <div id="forIn"></div>
+        <div id="forOf"></div>
+        <div id="while"></div>
+        <div id="doWhile"></div>
+
+        <script>
+            // If statements
+            if (new Date().getHours() < 10) {  // If statement
+                document.getElementById("if").innerHTML = "Good morning!";
+            }
+            else if (new Date().getHours() < 20){
+                document.getElementById("if").innerHTML = "Good day!";
+            }
+            else {   // Else statement
+                document.getElementById("if").innerHTML = "Good evening!";
+            }
+
+            // Ternary Operators
+            const greeting = (person) => {
+                const name = person ? person.name : "stranger";
+                return `Hello, ${name}!`;
+            };
+
+            document.getElementById("ter").innerHTML = greeting({name: "Dilara"});
+
+            // Switch Statements
+            let text = document.getElementById("switch");
+            let day = "";
+
+            switch(new Date().getDay()) {
+                case 0:
+                    day = "Sunday";
+                    break;
+                case 1:
+                    day = "Saturday";
+                default:
+                    day = "It is not the weekend :(";
+            }
+
+            text.innerHTML = day;
+
+            // For loop
+            let loop = "";
+            let div = document.getElementById("for");
+
+            for (let i = 0; i < 5; i++) {
+                loop += "The number is " + i + "<br>";
+            }
+
+            div.innerHTML = loop;
+
+            // For In Loop
+            const person = {fname: "John", lname: "Doe", age: 25};
+            let per = "";
+            for (let x in person) {
+                per += person[x] + " ";
+            }
+
+            document.getElementById("forIn").innerHTML = per;
+
+            // For Of Loop
+            const cars = ["BMW", "Volvo", "Mini"];
+
+            let car = "";
+            for (let x of cars) {
+                car += x + " ";
+            }
+            document.getElementById("forOf").innerHTML = car;
+
+            // While Loop
+            let whileLoop = "";
+            let i = 0;
+            while (i < 10) {
+                whileLoop += "The number is " + i + "<br>";
+                i++
+            }
+
+            document.getElementById("while").innerHTML = whileLoop;
+
+            // Do While Loop
+            let y = 0;
+            let doWhile = "";
+            do {
+                doWhile += "<br>" + "The number is " + y + "<br>";
+                y++
+            }
+            while (y < 10);
+
+            document.getElementById("doWhile").innerHTML = doWhile;
+        </script>
+    </body>
+</html>
