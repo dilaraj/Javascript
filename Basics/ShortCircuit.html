@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Short Circuit</title>
+    </head>
+    <body>
+        <script>
+            var person1 = {
+            name: 'Jack',
+            age: 34,
+            job: 'teacher'
+        }
+
+        var person2 = {
+            name: 'Jack',
+            age: 34
+        }
+
+        console.log(person1.job || 'unemployed');
+        console.log(person2.job || 'unemployed');
+        </script>
+    </body>
+</html>
+
+
