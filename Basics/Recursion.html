@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Recursion</title>
+    </head>
+    <body>
+        <div id="fac"></div>
+        <script>
+            // Program to count down numbers to 1
+            function countDown(num) {
+                // display number
+                console.log(num);
+
+                // decrease number value
+                const newNum = num - 1;
+
+                // base case and recursion
+                if (newNum > 0) {
+                    countDown(newNum);
+                }
+            }
+
+            countDown(4);
+
+            // Program to find the factorial of a number
+            function factorial(x) {
+                if (x === 0) {
+                    return 1;
+                } else {
+                    return x * factorial(x - 1);
+                }
+            }
+
+            const num = 3;
+
+            if (num > 0) {
+                let result = factorial(num);
+                document.getElementById("fac").innerHTML = `The factorial of ${num} is ${result}`;
+            }
+
+        </script>
+    </body>
+</html>
